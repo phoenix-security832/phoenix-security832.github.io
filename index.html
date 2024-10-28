@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phoenix | Digital Shadow</title>
+    <style>
+        :root {
+            --neon-green: #39ff14;
+            --dark-bg: #0a0a0a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .glitch-header {
+            font-size: 4rem;
+            text-transform: uppercase;
+            position: relative;
+            text-shadow: 
+                0 0 5px var(--neon-green),
+                0 0 10px var(--neon-green),
+                0 0 20px var(--neon-green);
+            animation: glitch 2s infinite;
+        }
+
+        @keyframes glitch {
+            0% {
+                text-shadow: 0 0 5px var(--neon-green);
+            }
+            50% {
+                text-shadow: 
+                    -2px 2px 5px var(--neon-green),
+                    2px -2px 5px #ff0000;
+            }
+            100% {
+                text-shadow: 0 0 5px var(--neon-green);
+            }
+        }
+
+        .terminal {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid var(--neon-green);
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .terminal::before {
+            content: "> ";
+            color: var(--neon-green);
+        }
+
+        .blink {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        p {
+            margin: 1rem 0;
+            color: #888;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .skill {
+            background: rgba(57, 255, 20, 0.1);
+            padding: 1rem;
+            border: 1px solid var(--neon-green);
+        }
+
+        .contact {
+            margin-top: 3rem;
+            text-align: right;
+        }
+
+        .contact a {
+            color: var(--neon-green);
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+
+        .contact a:hover {
+            text-shadow: 0 0 5px var(--neon-green);
+        }
+
+        .ascii-art {
+            font-family: monospace;
+            white-space: pre;
+            color: var(--neon-green);
+            margin: 2rem 0;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="glitch-header">Phoenix</h1>
+        
+        <div class="ascii-art">
+           /\\   /\\
+          /  \\ /  \\
+         /    Y    \\
+        /     |     \\
+       /      |      \\
+      /       |       \\
+     /        |        \\
+    /__________________\\
+        </div>
+
+        <div class="terminal">
+            Greetings, wanderer of the digital realm<span class="blink">_</span>
+        </div>
+
+        <p>
+            In a world of binary choices, I choose the hidden third option. Security researcher, 
+            digital artist, and guardian of the electronic frontier.
+        </p>
+
+        <div class="skills">
+            <div class="skill">
+                ⚡ Penetration Testing
+            </div>
+            <div class="skill">
+                ⚡ Zero-Day Research
+            </div>
+            <div class="skill">
+                ⚡ System Architecture
+            </div>
+            <div class="skill">
+                ⚡ Cryptography
+            </div>
+        </div>
+
+        <p>
+            "The code is poetry, security is art, and knowledge wants to be free."
+        </p>
+
+        <div class="terminal">
+            Current Status: Hunting vulnerabilities in the matrix<span class="blink">_</span>
+        </div>
+
+        <div class="contact">
+            <a href="#">Encrypted Contact</a>
+            <a href="#">PGP Key</a>
+            <a href="#">Research</a>
+        </div>
+    </div>
+</body>
+</html>
